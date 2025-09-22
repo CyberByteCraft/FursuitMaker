@@ -37,7 +37,7 @@
                 <div class="TabContent active" id="login">
                     <div class="FormHeader">
                     <h2 class="FormTitle" data-i18n="login.title">Willkommen zurück!</h2>
-                    <p class="FormSubtitle" data-i18n="login.subtitle">Melde dich an, um Zugang zu exklusiven Maker-Features zu erhalten</p>
+                    <p class="FormSubtitle" data-i18n="login.subtitle">Melde dich als Fursuit-Maker an, um dein Portfolio zu verwalten</p>
                     </div>
 
                     <form class="AuthForm" id="loginForm">
@@ -79,8 +79,8 @@
                 <!-- Register Form -->
                 <div class="TabContent" id="register">
                     <div class="FormHeader">
-                    <h2 class="FormTitle" data-i18n="register.title">Werde Teil der Community!</h2>
-                    <p class="FormSubtitle" data-i18n="register.subtitle">Erstelle deinen Account und entdecke die Welt der Fursuit-Maker</p>
+                    <h2 class="FormTitle" data-i18n="register.title">Als Fursuit-Maker registrieren</h2>
+                    <p class="FormSubtitle" data-i18n="register.subtitle">Erstelle dein Maker-Profil und präsentiere deine Werke der Community</p>
                     </div>
 
                     <form class="AuthForm" id="registerForm">
@@ -128,13 +128,19 @@
                         </div>
 
                         <div class="InputGroup">
-                            <label for="userType" class="InputLabel" data-i18n="register.usertype">🎨 Ich bin...</label>
-                            <select id="userType" name="userType" class="InputField" required>
-                            <option value="" data-i18n="register.usertype.select">Wähle eine Option</option>
-                            <option value="customer" data-i18n="register.usertype.customer">🎭 Fursuit-Interessent</option>
-                            <option value="maker" data-i18n="register.usertype.maker">🔨 Fursuit-Maker</option>
-                            <option value="both" data-i18n="register.usertype.both">🌟 Beides</option>
-                            <option value="curious" data-i18n="register.usertype.curious">👀 Nur neugierig</option>
+                            <label for="makerName" class="InputLabel" data-i18n="register.makername">🎨 Maker-Name/Studio</label>
+                            <input type="text" id="makerName" name="makerName" class="InputField" placeholder="z.B. FluffyCraft Studios" required>
+                        </div>
+
+                        <div class="InputGroup">
+                            <label for="specialty" class="InputLabel" data-i18n="register.specialty">🔨 Spezialisierung</label>
+                            <select id="specialty" name="specialty" class="InputField" required>
+                                <option value="" data-i18n="register.specialty.select">Wähle deine Spezialisierung</option>
+                                <option value="cartoon" data-i18n="register.specialty.cartoon">🎭 Cartoon-Style</option>
+                                <option value="realistic" data-i18n="register.specialty.realistic">🦊 Realistisch</option>
+                                <option value="kemono" data-i18n="register.specialty.kemono">🌸 Kemono</option>
+                                <option value="protogen" data-i18n="register.specialty.protogen">🤖 Protogen/Tech</option>
+                                <option value="mixed" data-i18n="register.specialty.mixed">🌈 Verschiedene Stile</option>
                             </select>
                         </div>
 
@@ -177,7 +183,7 @@
 
             <!-- Feature Highlights -->
             <div class="FeatureHighlights">
-                <h3 class="FeatureTitle" data-i18n="login.features.title">💎 Warum bei uns registrieren?</h3>
+                <h3 class="FeatureTitle" data-i18n="login.features.title">💎 Warum als Maker registrieren?</h3>
                 <div class="FeatureList">
                     <div class="FeatureItem">
                         <span class="FeatureIcon">💌</span>
