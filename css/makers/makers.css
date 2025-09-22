@@ -1,0 +1,538 @@
+/* ===========================================
+   FURSUIT MAKERS - MAKERS PAGE STYLES
+   =========================================== */
+
+/* --Globale Variablen für Makers-- */
+:root {
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --color-text-dark: #1a202c;
+    --color-text-medium: #2d3748;
+    --color-text-light: #4a5568;
+    --color-white: #ffffff;
+    --color-success: #48bb78;
+    --color-warning: #ed8936;
+    --color-danger: #f56565;
+    --color-gray-light: #f7fafc;
+    --color-gray-medium: #e2e8f0;
+    --color-gray-dark: #718096;
+    --border-radius: 16px;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --Hauptcontainer-- */
+.MainContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 150px);
+}
+
+/* ===========================================
+   PAGE HEADER
+   =========================================== */
+.PageHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.PageTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.PageSubtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===========================================
+   FILTER SECTION
+   =========================================== */
+.FilterSection {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-gray-medium);
+}
+
+.FilterControls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.FilterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 150px;
+}
+
+.FilterGroup label {
+    font-weight: 600;
+    color: var(--color-text-medium);
+    font-size: 0.9rem;
+}
+
+.FilterSelect {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-gray-medium);
+    border-radius: 8px;
+    background: var(--color-white);
+    color: var(--color-text-dark);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.FilterSelect:focus {
+    outline: none;
+    border-color: var(--color-purple);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.FilterClear {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-gray-light);
+    border: 2px solid var(--color-gray-medium);
+    border-radius: 8px;
+    color: var(--color-text-medium);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    align-self: flex-end;
+}
+
+.FilterClear:hover {
+    background: var(--color-gray-medium);
+    color: var(--color-text-dark);
+}
+
+/* ===========================================
+   MAKERS GRID
+   =========================================== */
+.MakersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* ===========================================
+   MAKER CARDS
+   =========================================== */
+.MakerCard {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-gray-medium);
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+}
+
+.MakerCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+}
+
+.MakerCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.MakerCard:hover::before {
+    transform: translateX(0);
+}
+
+/* --Maker Header-- */
+.MakerHeader {
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.MakerAvatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-gray-light);
+    transition: var(--transition);
+}
+
+.MakerCard:hover .MakerAvatar {
+    border-color: var(--color-purple);
+}
+
+.MakerInfo {
+    flex: 1;
+}
+
+.MakerName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.MakerStatus {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.MakerStatus.open {
+    background: rgba(72, 187, 120, 0.1);
+    color: var(--color-success);
+}
+
+.MakerStatus.waitlist {
+    background: rgba(237, 137, 54, 0.1);
+    color: var(--color-warning);
+}
+
+.MakerStatus.closed {
+    background: rgba(245, 101, 101, 0.1);
+    color: var(--color-danger);
+}
+
+.MakerRating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.Stars {
+    font-size: 0.9rem;
+}
+
+.RatingText {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    font-weight: 600;
+}
+
+/* --Maker Details-- */
+.MakerDetails {
+    padding: 1.5rem;
+}
+
+.MakerStyle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.StyleTag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.StyleTag.cartoon {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: #8b5384;
+}
+
+.StyleTag.realistic {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #8b4513;
+}
+
+.StyleTag.kemono {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    color: #6b46c1;
+}
+
+.StyleTag.protogen {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2d3748;
+}
+
+.MakerDescription {
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.MakerSpecs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.SpecItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.SpecItem:last-child {
+    border-bottom: none;
+}
+
+.SpecLabel {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.SpecValue {
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    text-align: right;
+}
+
+/* --Maker Actions-- */
+.MakerActions {
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-gray-light);
+}
+
+.ActionBtn {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.ActionBtn.primary {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+}
+
+.ActionBtn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.ActionBtn.primary.disabled {
+    background: var(--color-gray-medium);
+    color: var(--color-gray-dark);
+    cursor: not-allowed;
+}
+
+.ActionBtn.primary.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.ActionBtn.secondary {
+    background: var(--color-white);
+    color: var(--color-text-medium);
+    border: 2px solid var(--color-gray-medium);
+}
+
+.ActionBtn.secondary:hover {
+    background: var(--color-gray-light);
+    border-color: var(--color-purple);
+    color: var(--color-purple);
+}
+
+.ActionBtn.tertiary {
+    background: var(--color-white);
+    color: var(--color-danger);
+    border: 2px solid var(--color-gray-medium);
+    flex: 0 0 auto;
+    width: 45px;
+    padding: 0.75rem;
+}
+
+.ActionBtn.tertiary:hover {
+    background: rgba(245, 101, 101, 0.1);
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+
+/* ===========================================
+   LOAD MORE SECTION
+   =========================================== */
+.LoadMoreSection {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.LoadMoreBtn {
+    padding: 1rem 2.5rem;
+    background: var(--gradient-secondary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.LoadMoreBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.ResultsInfo {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media screen and (max-width: 768px) {
+    .MainContainer {
+        padding: 1rem 0.5rem;
+    }
+    
+    .PageTitle {
+        font-size: 2.5rem;
+    }
+    
+    .PageSubtitle {
+        font-size: 1.1rem;
+    }
+    
+    .FilterControls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .FilterGroup {
+        min-width: auto;
+    }
+    
+    .FilterClear {
+        align-self: stretch;
+    }
+    
+    .MakersGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .MakerHeader {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .MakerRating {
+        align-items: center;
+    }
+    
+    .MakerActions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .ActionBtn.tertiary {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .PageTitle {
+        font-size: 2rem;
+    }
+    
+    .MakerCard {
+        margin: 0 0.5rem;
+    }
+    
+    .MakerHeader {
+        padding: 1rem;
+    }
+    
+    .MakerDetails {
+        padding: 1rem;
+    }
+    
+    .MakerActions {
+        padding: 0.75rem 1rem 1rem;
+    }
+    
+    .SpecItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .SpecValue {
+        text-align: left;
+    }
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.MakerCard {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.MakerCard:nth-child(1) { animation-delay: 0.1s; }
+.MakerCard:nth-child(2) { animation-delay: 0.2s; }
+.MakerCard:nth-child(3) { animation-delay: 0.3s; }
+.MakerCard:nth-child(4) { animation-delay: 0.4s; }
+.MakerCard:nth-child(5) { animation-delay: 0.5s; }
+.MakerCard:nth-child(6) { animation-delay: 0.6s; }

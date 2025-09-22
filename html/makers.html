@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/basics/basics.css">
+    <link rel="stylesheet" href="../css/makers/makers.css">
+    <script src="../js/simple-lang.js"></script>
+    <title>Fursuit Makers</title>
+</head>
+<body>
+        <header class="NavbarMainContainer">
+        <div class="NavbarTitleContainer">
+            <h1 class="NavbarTitle" data-i18n="nav.title">FurSuitMakers</h1>
+            <a class="NavbarLink" href="index.html" data-i18n="nav.home">Home</a>
+            <a class="NavbarLink" href="makers.html" data-i18n="nav.makers">Makers</a>
+        </div>
+            <div class="NavbarLinksSearchLoginContainer">
+                <form class="NavbarFromSearch" method="get">
+                <input class="NavbarSearch" type="text" name="search" data-i18n="nav.search.placeholder" placeholder="Suchen...">
+                <button class="NavbarSearchSubmit" type="submit"></button>
+                </form>
+            <a class="NavbarLoginOrReg" href="login.html"></a>
+            </div>   
+    </header>
+    
+    <main class="MainContainer">
+        <!-- Header Section -->
+        <div class="PageHeader">
+            <h1 class="PageTitle" data-i18n="makers.title">🎭 Fursuit Makers</h1>
+            <p class="PageSubtitle" data-i18n="makers.subtitle">Entdecke talentierte Maker und finde den perfekten Künstler für deinen Fursuit</p>
+        </div>
+
+        <!-- Filter & Search Section -->
+        <div class="FilterSection">
+            <div class="FilterControls">
+                <div class="FilterGroup">
+                    <label for="styleFilter" data-i18n="makers.filter.style">Stil:</label>
+                    <select id="styleFilter" class="FilterSelect">
+                        <option value="" data-i18n="makers.filter.style.all">Alle Stile</option>
+                        <option value="cartoon" data-i18n="makers.filter.style.cartoon">Cartoon</option>
+                        <option value="realistic" data-i18n="makers.filter.style.realistic">Realistisch</option>
+                        <option value="kemono" data-i18n="makers.filter.style.kemono">Kemono</option>
+                        <option value="protogen" data-i18n="makers.filter.style.protogen">Protogen</option>
+                    </select>
+                </div>
+                
+                <div class="FilterGroup">
+                    <label for="statusFilter" data-i18n="makers.filter.status">Status:</label>
+                    <select id="statusFilter" class="FilterSelect">
+                        <option value="" data-i18n="makers.filter.status.all">Alle</option>
+                        <option value="open" data-i18n="makers.filter.status.open">Aufträge offen</option>
+                        <option value="waitlist" data-i18n="makers.filter.status.waitlist">Warteliste</option>
+                        <option value="closed" data-i18n="makers.filter.status.closed">Geschlossen</option>
+                    </select>
+                </div>
+                
+                <button class="FilterClear" data-i18n="makers.filter.reset">🔄 Filter zurücksetzen</button>
+            </div>
+        </div>
+
+        <!-- Makers Grid -->
+        <div class="MakersGrid">
+            <!-- Maker Card 1 -->
+            <div class="MakerCard">
+                <div class="MakerHeader">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Maker Avatar" class="MakerAvatar">
+                    <div class="MakerInfo">
+                        <h3 class="MakerName">FluffyCraft Studios</h3>
+                        <div class="MakerStatus open" data-i18n="makers.status.open">✅ Aufträge offen</div>
+                    </div>
+                    <div class="MakerRating">
+                        <span class="Stars">⭐⭐⭐⭐⭐</span>
+                        <span class="RatingText">(4.9)</span>
+                    </div>
+                </div>
+                
+                <div class="MakerDetails">
+                    <div class="MakerStyle">
+                        <span class="StyleTag cartoon">🎨 Cartoon</span>
+                        <span class="StyleTag realistic">🔥 Realistisch</span>
+                    </div>
+                    
+                    <p class="MakerDescription">
+                        Spezialisiert auf hochwertige Cartoon-Fursuits mit lebendigen Farben und ausdrucksstarken Gesichtern. 5+ Jahre Erfahrung.
+                    </p>
+                    
+                    <div class="MakerSpecs">
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.price">💰 Preis:</span>
+                            <span class="SpecValue">€2.500 - €4.500</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.waittime">⏱️ Wartezeit:</span>
+                            <span class="SpecValue">6-8 Monate</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.location">📍 Standort:</span>
+                            <span class="SpecValue">Deutschland</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="MakerActions">
+                    <button class="ActionBtn primary" data-i18n="makers.btn.contact">📧 Kontakt</button>
+                    <button class="ActionBtn secondary" data-i18n="makers.btn.portfolio">🖼️ Portfolio</button>
+                    <button class="ActionBtn tertiary" data-i18n="makers.btn.favorite">❤️</button>
+                </div>
+            </div>
+
+            <!-- Maker Card 2 -->
+            <div class="MakerCard">
+                <div class="MakerHeader">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b434?w=150&h=150&fit=crop&crop=face" alt="Maker Avatar" class="MakerAvatar">
+                    <div class="MakerInfo">
+                        <h3 class="MakerName">Mystical Creations</h3>
+                        <div class="MakerStatus waitlist" data-i18n="makers.status.waitlist">⏳ Warteliste</div>
+                    </div>
+                    <div class="MakerRating">
+                        <span class="Stars">⭐⭐⭐⭐⭐</span>
+                        <span class="RatingText">(4.8)</span>
+                    </div>
+                </div>
+                
+                <div class="MakerDetails">
+                    <div class="MakerStyle">
+                        <span class="StyleTag realistic">🔥 Realistisch</span>
+                        <span class="StyleTag kemono">🌸 Kemono</span>
+                    </div>
+                    
+                    <p class="MakerDescription">
+                        Meisterin für ultra-realistische Fursuits mit handgemalten Details. Bekannt für Fantasy-Kreaturen und Drachen.
+                    </p>
+                    
+                    <div class="MakerSpecs">
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.price">💰 Preis:</span>
+                            <span class="SpecValue">€3.000 - €6.000</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.waittime">⏱️ Wartezeit:</span>
+                            <span class="SpecValue">12-18 Monate</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.location">📍 Standort:</span>
+                            <span class="SpecValue">Österreich</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="MakerActions">
+                    <button class="ActionBtn primary" data-i18n="makers.btn.contact">📧 Kontakt</button>
+                    <button class="ActionBtn secondary" data-i18n="makers.btn.portfolio">🖼️ Portfolio</button>
+                    <button class="ActionBtn tertiary" data-i18n="makers.btn.favorite">❤️</button>
+                </div>
+            </div>
+
+            <!-- Maker Card 3 -->
+            <div class="MakerCard">
+                <div class="MakerHeader">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Maker Avatar" class="MakerAvatar">
+                    <div class="MakerInfo">
+                        <h3 class="MakerName">TechFur Innovations</h3>
+                        <div class="MakerStatus open" data-i18n="makers.status.open">✅ Aufträge offen</div>
+                    </div>
+                    <div class="MakerRating">
+                        <span class="Stars">⭐⭐⭐⭐⭐</span>
+                        <span class="RatingText">(4.7)</span>
+                    </div>
+                </div>
+                
+                <div class="MakerDetails">
+                    <div class="MakerStyle">
+                        <span class="StyleTag protogen">🤖 Protogen</span>
+                        <span class="StyleTag cartoon">🎨 Cartoon</span>
+                    </div>
+                    
+                    <p class="MakerDescription">
+                        Spezialist für elektronische Fursuits mit LED-Integration. Protogens, Synths und futuristische Designs.
+                    </p>
+                    
+                    <div class="MakerSpecs">
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.price">💰 Preis:</span>
+                            <span class="SpecValue">€4.000 - €8.000</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.waittime">⏱️ Wartezeit:</span>
+                            <span class="SpecValue">8-12 Monate</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.location">📍 Standort:</span>
+                            <span class="SpecValue">Schweiz</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="MakerActions">
+                    <button class="ActionBtn primary" data-i18n="makers.btn.contact">📧 Kontakt</button>
+                    <button class="ActionBtn secondary" data-i18n="makers.btn.portfolio">🖼️ Portfolio</button>
+                    <button class="ActionBtn tertiary" data-i18n="makers.btn.favorite">❤️</button>
+                </div>
+            </div>
+
+            <!-- Maker Card 4 -->
+            <div class="MakerCard">
+                <div class="MakerHeader">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Maker Avatar" class="MakerAvatar">
+                    <div class="MakerInfo">
+                        <h3 class="MakerName">Kawaii Kemono Co.</h3>
+                        <div class="MakerStatus closed" data-i18n="makers.status.closed">❌ Geschlossen</div>
+                    </div>
+                    <div class="MakerRating">
+                        <span class="Stars">⭐⭐⭐⭐⭐</span>
+                        <span class="RatingText">(4.9)</span>
+                    </div>
+                </div>
+                
+                <div class="MakerDetails">
+                    <div class="MakerStyle">
+                        <span class="StyleTag kemono">🌸 Kemono</span>
+                        <span class="StyleTag cartoon">🎨 Cartoon</span>
+                    </div>
+                    
+                    <p class="MakerDescription">
+                        Authentische Kemono-Fursuits im japanischen Stil. Bekannt für süße, pastel-farbene Designs und perfekte Proportionen.
+                    </p>
+                    
+                    <div class="MakerSpecs">
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.price">💰 Preis:</span>
+                            <span class="SpecValue">€2.800 - €5.200</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.waittime">⏱️ Wartezeit:</span>
+                            <span class="SpecValue">Aktuell geschlossen</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.location">📍 Standort:</span>
+                            <span class="SpecValue">Japan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="MakerActions">
+                    <button class="ActionBtn primary disabled" data-i18n="makers.btn.contact">📧 Kontakt</button>
+                    <button class="ActionBtn secondary" data-i18n="makers.btn.portfolio">🖼️ Portfolio</button>
+                    <button class="ActionBtn tertiary" data-i18n="makers.btn.favorite">❤️</button>
+                </div>
+            </div>
+
+            <!-- Maker Card 5 -->
+            <div class="MakerCard">
+                <div class="MakerHeader">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face" alt="Maker Avatar" class="MakerAvatar">
+                    <div class="MakerInfo">
+                        <h3 class="MakerName">WildCraft Studios</h3>
+                        <div class="MakerStatus open" data-i18n="makers.status.open">✅ Aufträge offen</div>
+                    </div>
+                    <div class="MakerRating">
+                        <span class="Stars">⭐⭐⭐⭐⭐</span>
+                        <span class="RatingText">(4.6)</span>
+                    </div>
+                </div>
+                
+                <div class="MakerDetails">
+                    <div class="MakerStyle">
+                        <span class="StyleTag realistic">🔥 Realistisch</span>
+                        <span class="StyleTag cartoon">🎨 Cartoon</span>
+                    </div>
+                    
+                    <p class="MakerDescription">
+                        Vielseitiger Maker für alle Arten von Fursuits. Besonders stark bei Canine und Feline Charakteren.
+                    </p>
+                    
+                    <div class="MakerSpecs">
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.price">💰 Preis:</span>
+                            <span class="SpecValue">€2.200 - €4.000</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.waittime">⏱️ Wartezeit:</span>
+                            <span class="SpecValue">4-6 Monate</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.location">📍 Standort:</span>
+                            <span class="SpecValue">USA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="MakerActions">
+                    <button class="ActionBtn primary" data-i18n="makers.btn.contact">📧 Kontakt</button>
+                    <button class="ActionBtn secondary" data-i18n="makers.btn.portfolio">🖼️ Portfolio</button>
+                    <button class="ActionBtn tertiary" data-i18n="makers.btn.favorite">❤️</button>
+                </div>
+            </div>
+
+            <!-- Maker Card 6 -->
+            <div class="MakerCard">
+                <div class="MakerHeader">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face" alt="Maker Avatar" class="MakerAvatar">
+                    <div class="MakerInfo">
+                        <h3 class="MakerName">Fantasy Furs</h3>
+                        <div class="MakerStatus waitlist" data-i18n="makers.status.waitlist">⏳ Warteliste</div>
+                    </div>
+                    <div class="MakerRating">
+                        <span class="Stars">⭐⭐⭐⭐⭐</span>
+                        <span class="RatingText">(4.8)</span>
+                    </div>
+                </div>
+                
+                <div class="MakerDetails">
+                    <div class="MakerStyle">
+                        <span class="StyleTag realistic">🔥 Realistisch</span>
+                        <span class="StyleTag kemono">🌸 Kemono</span>
+                    </div>
+                    
+                    <p class="MakerDescription">
+                        Expertin für Fantasy-Kreaturen, Drachen und mythologische Wesen. Einzigartige, magische Designs.
+                    </p>
+                    
+                    <div class="MakerSpecs">
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.price">💰 Preis:</span>
+                            <span class="SpecValue">€3.500 - €7.000</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.waittime">⏱️ Wartezeit:</span>
+                            <span class="SpecValue">10-14 Monate</span>
+                        </div>
+                        <div class="SpecItem">
+                            <span class="SpecLabel" data-i18n="makers.spec.location">📍 Standort:</span>
+                            <span class="SpecValue">Kanada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="MakerActions">
+                    <button class="ActionBtn primary" data-i18n="makers.btn.contact">📧 Kontakt</button>
+                    <button class="ActionBtn secondary" data-i18n="makers.btn.portfolio">🖼️ Portfolio</button>
+                    <button class="ActionBtn tertiary" data-i18n="makers.btn.favorite">❤️</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Section -->
+        <div class="LoadMoreSection">
+            <button class="LoadMoreBtn" data-i18n="makers.load.more">📦 Weitere Maker laden</button>
+            <p class="ResultsInfo" data-i18n="makers.results.info">Zeige 6 von 24 Makern</p>
+        </div>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.text">&copy;2025 <strong>FurSuitMakers</strong> | Dev v0.0.1 | Development by Anigx</p>
+    </footer>
+</body>
+</html>

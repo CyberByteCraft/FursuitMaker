@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/basics/basics.css">
+    <link rel="stylesheet" href="../css/login/login.css">
+    <script src="../js/simple-lang.js"></script>
+    <title>Anmelden | FurSuitMakers</title>
+</head>
+<body>
+    <header class="NavbarMainContainer">
+        <div class="NavbarTitleContainer">
+            <h1 class="NavbarTitle" data-i18n="nav.title">FurSuitMakers</h1>
+            <a class="NavbarLink" href="index.html" data-i18n="nav.home">Home</a>
+            <a class="NavbarLink" href="makers.html" data-i18n="nav.makers">Makers</a>
+        </div>
+            <div class="NavbarLinksSearchLoginContainer">
+                <form class="NavbarFromSearch" method="get">
+                    <input class="NavbarSearch" type="text" name="search" data-i18n="nav.search.placeholder" placeholder="Suchen...">
+                <button class="NavbarSearchSubmit" type="submit"></button>
+                </form>
+                <a class="NavbarLoginOrReg" href="login.html"></a>
+            </div>   
+    </header>
+    
+    <main class="MainContainer">
+        <div class="AuthContainer">
+            <div class="AuthCard">
+                <!-- Tab Navigation -->
+                <div class="TabNavigation">
+                <button class="TabButton active" data-tab="login" data-i18n="login.tab.login">🔐 Anmelden</button>
+                <button class="TabButton" data-tab="register" data-i18n="login.tab.register">✨ Registrieren</button>
+                </div>
+
+                <!-- Login Form -->
+                <div class="TabContent active" id="login">
+                    <div class="FormHeader">
+                    <h2 class="FormTitle" data-i18n="login.title">Willkommen zurück!</h2>
+                    <p class="FormSubtitle" data-i18n="login.subtitle">Melde dich an, um Zugang zu exklusiven Maker-Features zu erhalten</p>
+                    </div>
+
+                    <form class="AuthForm" id="loginForm">
+                        <div class="InputGroup">
+                            <label for="loginEmail" class="InputLabel" data-i18n="login.email">📧 E-Mail-Adresse</label>
+                            <input type="email" id="loginEmail" name="email" class="InputField" placeholder="deine@email.com" required>
+                        </div>
+
+                        <div class="InputGroup">
+                            <label for="loginPassword" class="InputLabel" data-i18n="login.password">🔒 Passwort</label>
+                            <div class="PasswordWrapper">
+                                <input type="password" id="loginPassword" name="password" class="InputField" placeholder="Dein Passwort" required>
+                                <button type="button" class="PasswordToggle" onclick="togglePassword('loginPassword')">👁️</button>
+                            </div>
+                        </div>
+
+                        <div class="FormOptions">
+                            <label class="CheckboxLabel">
+                                <input type="checkbox" name="remember" class="Checkbox">
+                                <span class="CheckboxCustom"></span>
+                                <span data-i18n="login.remember">Angemeldet bleiben</span>
+                            </label>
+                            <a href="#" class="ForgotLink" data-i18n="login.forgot">Passwort vergessen?</a>
+                        </div>
+
+                        <button type="submit" class="SubmitButton primary" data-i18n="login.btn">🚀 Anmelden</button>
+
+                        <div class="SocialLogin">
+                            <p class="SocialText" data-i18n="login.social.text">Oder anmelden mit:</p>
+                            <div class="SocialButtons">
+                                <button type="button" class="SocialButton google">🟢 Google</button>
+                                <button type="button" class="SocialButton discord">💜 Discord</button>
+                                <button type="button" class="SocialButton twitter">🐦 Twitter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div class="TabContent" id="register">
+                    <div class="FormHeader">
+                    <h2 class="FormTitle" data-i18n="register.title">Werde Teil der Community!</h2>
+                    <p class="FormSubtitle" data-i18n="register.subtitle">Erstelle deinen Account und entdecke die Welt der Fursuit-Maker</p>
+                    </div>
+
+                    <form class="AuthForm" id="registerForm">
+                        <div class="InputRow">
+                            <div class="InputGroup">
+                                <label for="firstName" class="InputLabel" data-i18n="register.firstname">👤 Vorname</label>
+                                <input type="text" id="firstName" name="firstName" class="InputField" placeholder="Max" required>
+                            </div>
+                            <div class="InputGroup">
+                                <label for="lastName" class="InputLabel" data-i18n="register.lastname">👤 Nachname</label>
+                                <input type="text" id="lastName" name="lastName" class="InputField" placeholder="Mustermann" required>
+                            </div>
+                        </div>
+
+                        <div class="InputGroup">
+                            <label for="username" class="InputLabel" data-i18n="register.username">🎭 Benutzername</label>
+                            <input type="text" id="username" name="username" class="InputField" placeholder="FurryFan2025" required>
+                        </div>
+
+                        <div class="InputGroup">
+                            <label for="registerEmail" class="InputLabel" data-i18n="register.email">📧 E-Mail-Adresse</label>
+                            <input type="email" id="registerEmail" name="email" class="InputField" placeholder="deine@email.com" required>
+                        </div>
+
+                        <div class="InputGroup">
+                            <label for="registerPassword" class="InputLabel" data-i18n="register.password">🔒 Passwort</label>
+                            <div class="PasswordWrapper">
+                                <input type="password" id="registerPassword" name="password" class="InputField" placeholder="Mindestens 8 Zeichen" required>
+                                <button type="button" class="PasswordToggle" onclick="togglePassword('registerPassword')">👁️</button>
+                            </div>
+                            <div class="PasswordStrength">
+                                <div class="StrengthBar">
+                                    <div class="StrengthFill" id="strengthFill"></div>
+                                </div>
+                                <span class="StrengthText" id="strengthText">Passwort eingeben</span>
+                            </div>
+                        </div>
+
+                        <div class="InputGroup">
+                            <label for="confirmPassword" class="InputLabel" data-i18n="register.confirm">🔒 Passwort bestätigen</label>
+                            <div class="PasswordWrapper">
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="InputField" placeholder="Passwort wiederholen" required>
+                                <button type="button" class="PasswordToggle" onclick="togglePassword('confirmPassword')">👁️</button>
+                            </div>
+                        </div>
+
+                        <div class="InputGroup">
+                            <label for="userType" class="InputLabel" data-i18n="register.usertype">🎨 Ich bin...</label>
+                            <select id="userType" name="userType" class="InputField" required>
+                            <option value="" data-i18n="register.usertype.select">Wähle eine Option</option>
+                            <option value="customer" data-i18n="register.usertype.customer">🎭 Fursuit-Interessent</option>
+                            <option value="maker" data-i18n="register.usertype.maker">🔨 Fursuit-Maker</option>
+                            <option value="both" data-i18n="register.usertype.both">🌟 Beides</option>
+                            <option value="curious" data-i18n="register.usertype.curious">👀 Nur neugierig</option>
+                            </select>
+                        </div>
+
+                        <div class="FormOptions">
+                            <label class="CheckboxLabel">
+                                <input type="checkbox" name="terms" class="Checkbox" required>
+                                <span class="CheckboxCustom"></span>
+                                <span data-i18n="register.terms">Ich akzeptiere die <a href="#" class="Link">AGB</a> und <a href="#" class="Link">Datenschutzbestimmungen</a></span>
+                            </label>
+                        </div>
+
+                        <div class="FormOptions">
+                            <label class="CheckboxLabel">
+                                <input type="checkbox" name="newsletter" class="Checkbox">
+                                <span class="CheckboxCustom"></span>
+                                <span data-i18n="register.newsletter">Newsletter mit neuesten Maker-Updates erhalten</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="SubmitButton primary" data-i18n="register.btn">✨ Account erstellen</button>
+
+                        <div class="SocialLogin">
+                            <p class="SocialText" data-i18n="register.social.text">Oder registrieren mit:</p>
+                            <div class="SocialButtons">
+                                <button type="button" class="SocialButton google">🟢 Google</button>
+                                <button type="button" class="SocialButton discord">💜 Discord</button>
+                                <button type="button" class="SocialButton twitter">🐦 Twitter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success Message -->
+                <div class="SuccessMessage" id="successMessage">
+                    <div class="SuccessIcon">🎉</div>
+                    <h3>Erfolgreich!</h3>
+                    <p id="successText">Du wirst weitergeleitet...</p>
+                </div>
+            </div>
+
+            <!-- Feature Highlights -->
+            <div class="FeatureHighlights">
+                <h3 class="FeatureTitle" data-i18n="login.features.title">💎 Warum bei uns registrieren?</h3>
+                <div class="FeatureList">
+                    <div class="FeatureItem">
+                        <span class="FeatureIcon">💌</span>
+                        <div class="FeatureText">
+                            <strong data-i18n="login.features.contact.title">Direkter Maker-Kontakt</strong>
+                            <span data-i18n="login.features.contact.desc">Kommuniziere direkt mit deinen Lieblings-Makern</span>
+                        </div>
+                    </div>
+                    <div class="FeatureItem">
+                        <span class="FeatureIcon">❤️</span>
+                        <div class="FeatureText">
+                            <strong data-i18n="login.features.favorites.title">Favoriten-Liste</strong>
+                            <span data-i18n="login.features.favorites.desc">Speichere und verfolge deine Lieblings-Maker</span>
+                        </div>
+                    </div>
+                    <div class="FeatureItem">
+                        <span class="FeatureIcon">🔔</span>
+                        <div class="FeatureText">
+                            <strong data-i18n="login.features.notifications.title">Benachrichtigungen</strong>
+                            <span data-i18n="login.features.notifications.desc">Erhalte Updates wenn Maker neue Slots öffnen</span>
+                        </div>
+                    </div>
+                    <div class="FeatureItem">
+                        <span class="FeatureIcon">🎨</span>
+                        <div class="FeatureText">
+                            <strong data-i18n="login.features.dashboard.title">Maker-Dashboard</strong>
+                            <span data-i18n="login.features.dashboard.desc">Verwalte dein Portfolio und Projekte (für Maker)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.text">&copy;2025 <strong>FurSuitMakers</strong> | Dev v0.0.1 | Development by Anigx</p>
+    </footer>
+
+    <script>
+        // Tab Switching
+        document.querySelectorAll('.TabButton').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                document.querySelectorAll('.TabButton').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.TabContent').forEach(content => content.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Password Toggle
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.nextElementSibling;
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                button.textContent = '👁️';
+            }
+        }
+
+        // Password Strength Checker
+        document.getElementById('registerPassword').addEventListener('input', function() {
+            const password = this.value;
+            const strengthFill = document.getElementById('strengthFill');
+            const strengthText = document.getElementById('strengthText');
+            
+            let strength = 0;
+            let text = 'Sehr schwach';
+            let color = '#f56565';
+            
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            switch (strength) {
+                case 0: case 1: text = 'Sehr schwach'; color = '#f56565'; break;
+                case 2: text = 'Schwach'; color = '#ed8936'; break;
+                case 3: text = 'Mittel'; color = '#ecc94b'; break;
+                case 4: text = 'Stark'; color = '#48bb78'; break;
+                case 5: text = 'Sehr stark'; color = '#38a169'; break;
+            }
+            
+            strengthFill.style.width = (strength * 20) + '%';
+            strengthFill.style.backgroundColor = color;
+            strengthText.textContent = text;
+            strengthText.style.color = color;
+        });
+
+        // Form Submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showSuccess('Anmeldung erfolgreich! Du wirst weitergeleitet...');
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showSuccess('Account erfolgreich erstellt! Willkommen bei FurSuitMakers!');
+        });
+
+        function showSuccess(message) {
+            document.getElementById('successText').textContent = message;
+            document.getElementById('successMessage').classList.add('show');
+            setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+        }
+    </script>
+</body>
+</html>

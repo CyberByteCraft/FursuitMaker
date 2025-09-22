@@ -1,0 +1,637 @@
+/* ===========================================
+   FURSUIT MAKERS - LOGIN PAGE STYLES
+   =========================================== */
+
+/* --Globale Variablen für Login-- */
+:root {
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-success: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    --color-text-dark: #1a202c;
+    --color-text-medium: #2d3748;
+    --color-text-light: #4a5568;
+    --color-white: #ffffff;
+    --color-success: #48bb78;
+    --color-warning: #ed8936;
+    --color-danger: #f56565;
+    --color-purple: #667eea;
+    --color-gray-light: #f7fafc;
+    --color-gray-medium: #e2e8f0;
+    --color-gray-dark: #718096;
+    --border-radius: 16px;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --Hauptcontainer-- */
+.MainContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 150px);
+}
+
+/* ===========================================
+   AUTH CONTAINER
+   =========================================== */
+.AuthContainer {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ===========================================
+   AUTH CARD
+   =========================================== */
+.AuthCard {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--color-gray-medium);
+}
+
+.AuthCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+}
+
+/* ===========================================
+   TAB NAVIGATION
+   =========================================== */
+.TabNavigation {
+    display: flex;
+    background: var(--color-gray-light);
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+.TabButton {
+    flex: 1;
+    padding: 1.25rem 1rem;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.TabButton.active {
+    background: var(--color-white);
+    color: var(--color-purple);
+    border-bottom: 3px solid var(--color-purple);
+}
+
+.TabButton:hover:not(.active) {
+    background: var(--color-gray-medium);
+    color: var(--color-text-dark);
+}
+
+/* ===========================================
+   TAB CONTENT
+   =========================================== */
+.TabContent {
+    display: none;
+    padding: 2rem;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.TabContent.active {
+    display: block;
+}
+
+/* ===========================================
+   FORM HEADER
+   =========================================== */
+.FormHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.FormTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.FormSubtitle {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ===========================================
+   FORM STYLES
+   =========================================== */
+.AuthForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.InputRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.InputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.InputLabel {
+    font-weight: 600;
+    color: var(--color-text-medium);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.InputField {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--color-gray-medium);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background: var(--color-white);
+    color: var(--color-text-dark);
+}
+
+.InputField:focus {
+    outline: none;
+    border-color: var(--color-purple);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.InputField::placeholder {
+    color: var(--color-gray-dark);
+}
+
+/* ===========================================
+   PASSWORD WRAPPER
+   =========================================== */
+.PasswordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.PasswordToggle {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+    transition: var(--transition);
+    padding: 0.25rem;
+    border-radius: 4px;
+}
+
+.PasswordToggle:hover {
+    background: var(--color-gray-light);
+    color: var(--color-text-dark);
+}
+
+/* ===========================================
+   PASSWORD STRENGTH
+   =========================================== */
+.PasswordStrength {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.StrengthBar {
+    flex: 1;
+    height: 4px;
+    background: var(--color-gray-medium);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.StrengthFill {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.StrengthText {
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* ===========================================
+   FORM OPTIONS
+   =========================================== */
+.FormOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.CheckboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--color-text-medium);
+}
+
+.Checkbox {
+    display: none;
+}
+
+.CheckboxCustom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-gray-medium);
+    border-radius: 4px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.Checkbox:checked + .CheckboxCustom {
+    background: var(--color-purple);
+    border-color: var(--color-purple);
+}
+
+.Checkbox:checked + .CheckboxCustom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ForgotLink,
+.Link {
+    color: var(--color-purple);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.ForgotLink:hover,
+.Link:hover {
+    text-decoration: underline;
+    color: var(--color-text-dark);
+}
+
+/* ===========================================
+   SUBMIT BUTTON
+   =========================================== */
+.SubmitButton {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.SubmitButton.primary {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-soft);
+}
+
+.SubmitButton.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ===========================================
+   SOCIAL LOGIN
+   =========================================== */
+.SocialLogin {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.SocialText {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.SocialText::before,
+.SocialText::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: var(--color-gray-medium);
+}
+
+.SocialText::before {
+    left: 0;
+}
+
+.SocialText::after {
+    right: 0;
+}
+
+.SocialButtons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.SocialButton {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-gray-medium);
+    border-radius: 8px;
+    background: var(--color-white);
+    color: var(--color-text-medium);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    flex: 1;
+    max-width: 120px;
+}
+
+.SocialButton:hover {
+    border-color: var(--color-purple);
+    color: var(--color-purple);
+    transform: translateY(-1px);
+}
+
+.SocialButton.google:hover {
+    border-color: #4285f4;
+    color: #4285f4;
+}
+
+.SocialButton.discord:hover {
+    border-color: #7289da;
+    color: #7289da;
+}
+
+.SocialButton.twitter:hover {
+    border-color: #1da1f2;
+    color: #1da1f2;
+}
+
+/* ===========================================
+   SUCCESS MESSAGE
+   =========================================== */
+.SuccessMessage {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--gradient-success);
+    color: var(--color-text-dark);
+    animation: slideInUp 0.5s ease-out;
+}
+
+.SuccessMessage.show {
+    display: block;
+}
+
+.SuccessIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.SuccessMessage h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.SuccessMessage p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ===========================================
+   FEATURE HIGHLIGHTS
+   =========================================== */
+.FeatureHighlights {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-gray-medium);
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+}
+
+.FeatureTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.FeatureList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.FeatureItem {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.FeatureIcon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    padding: 0.5rem;
+    background: var(--gradient-accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.FeatureText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.FeatureText strong {
+    color: var(--color-text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.FeatureText span {
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media screen and (max-width: 968px) {
+    .AuthContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .FeatureHighlights {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .MainContainer {
+        padding: 1rem 0.5rem;
+    }
+    
+    .AuthCard {
+        margin: 0 0.5rem;
+    }
+    
+    .TabContent {
+        padding: 1.5rem;
+    }
+    
+    .FormTitle {
+        font-size: 1.8rem;
+    }
+    
+    .InputRow {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .FormOptions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .SocialButtons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .SocialButton {
+        max-width: none;
+    }
+    
+    .FeatureHighlights {
+        padding: 1.5rem;
+    }
+    
+    .FeatureItem {
+        gap: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .TabButton {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .FormTitle {
+        font-size: 1.5rem;
+    }
+    
+    .FormSubtitle {
+        font-size: 0.9rem;
+    }
+    
+    .TabContent {
+        padding: 1rem;
+    }
+    
+    .FeatureHighlights {
+        padding: 1rem;
+    }
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================================
+   INPUT VALIDATION STATES
+   =========================================== */
+.InputField.error {
+    border-color: var(--color-danger);
+    box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.1);
+}
+
+.InputField.success {
+    border-color: var(--color-success);
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+}
+
+.InputError {
+    color: var(--color-danger);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+    display: block;
+    min-height: 1rem;
+}
